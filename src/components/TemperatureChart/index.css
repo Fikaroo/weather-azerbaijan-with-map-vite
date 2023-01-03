@@ -1,0 +1,167 @@
+.labels {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  justify-content: space-between;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+}
+.labels div {
+  margin: 1rem;
+  color: #b7bbc8;
+}
+@media screen and (max-width: 520px) {
+  .labels div {
+    font-size: 0.8rem;
+    margin: 0.5rem;
+  }
+}
+
+.heading {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 0;
+  align-items: flex-start;
+}
+@media screen and (max-width: 760px) {
+  .heading {
+    top: 2rem;
+    left: 2rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .heading {
+    top: 1rem;
+    left: 1rem;
+  }
+}
+.heading .title {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #293155;
+}
+@media screen and (max-width: 520px) {
+  .heading .title {
+    font-size: 1.5rem;
+  }
+}
+.heading .subtitle {
+  font-size: 1.2rem;
+  color: #898fa3;
+}
+@media screen and (max-width: 520px) {
+  .heading .subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+.points {
+  position: absolute;
+  top: 0;
+}
+
+.points div {
+  --size: 3rem;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  top: var(--y);
+  left: var(--x);
+  transform: translate(calc(-0.5 * var(--size)), calc(-0.5 * var(--size)));
+}
+
+.marker {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.marker .tooltip {
+  position: absolute;
+  transform: translateY(calc(-100% - 2rem));
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.marker .circle {
+  position: absolute;
+  top: 0;
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 1rem;
+  background-color: var(--color);
+  border: 0.7rem solid white;
+  transform: translateY(-50%);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1), 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.legend {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0 1rem;
+  margin: 3rem;
+}
+@media screen and (max-width: 760px) {
+  .legend {
+    justify-content: flex-end;
+    margin: 2rem;
+  }
+}
+@media screen and (max-width: 520px) {
+  .legend {
+    margin: 1rem;
+    font-size: 0.8rem;
+  }
+}
+.legend > div {
+  display: flex;
+  color: #898fa3;
+}
+.legend span {
+  display: block;
+  background-color: var(--color);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+}
+svg {
+  width: auto;
+  height: auto;
+  stroke-width: auto;
+}
+
+svg#line {
+  width: 100%;
+  height: 100%;
+  transform: scaleY(-1);
+}
+svg#line path {
+  vector-effect: non-scaling-stroke;
+}
+svg#line .stroke {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.15rem;
+  pointer-events: none;
+}
+svg#line .gradient {
+  pointer-events: none;
+}
