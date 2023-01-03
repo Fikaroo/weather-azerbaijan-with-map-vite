@@ -20,7 +20,7 @@ const CityList = () => {
           <BsSearch className="w-5" />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-4 py-4 justify-items-center transition-all">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 py-4 justify-items-center transition-all">
         {data
           .filter(({ name }) =>
             name.toLowerCase().startsWith(val.toLowerCase())

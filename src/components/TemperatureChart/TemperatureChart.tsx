@@ -149,7 +149,7 @@ const Graph = ({ data, colors, weather, range, labels, legend, time }: any) => {
   data = [data[0]?.map((temp: number) => (temp + 15).toFixed())];
   return (
     <div className="relative h-[500px] w-full" ref={graph}>
-      <div className="flex absolute top-8 left-0 gap-2">
+      <div className="flex absolute top-8 -left-4 gap-2">
         <div>
           <WeatherIcon weather={weather[active.point]} width={"w-32"} />
         </div>
@@ -180,7 +180,7 @@ const Graph = ({ data, colors, weather, range, labels, legend, time }: any) => {
           return <Line key={i} path={path} color={colors[i]} />;
         })}
       </svg>
-      <div className="flex absolute -left-4 w-full -bottom-8 gap-[140px]">
+      <div className="flex absolute  w-full -bottom-8 -left-2 sm:-left-5 gap-[19px] sm:gap-[44px] md:gap-[62px] lg:gap-[99px] xl:gap-[135px]">
         {labels.map((label: any) => (
           <div key={label}>{label}</div>
         ))}
