@@ -44,8 +44,6 @@ const Weather = () => {
     ?.map(({ dt_txt }) => dt_txt.split(" ")[1].slice(0, 5).split(":").join("."))
     .slice(0, 8);
 
-  console.log(data);
-
   if (isLoading)
     return (
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">

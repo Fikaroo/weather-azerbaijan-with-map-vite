@@ -99,7 +99,7 @@ const WeatherIcon = ({ width, weather }: IWeatherIcon) => {
   const data = Icons.find((icon) => icon.id.includes(weather.id));
   const dispatch = useAppDispatch();
   useEffect(() => {
-    data?.colors && dispatch(setColor(data?.colors));
+    dispatch(setColor(data?.colors));
   }, [weather]);
 
   return weather.icon === "01d" ? (

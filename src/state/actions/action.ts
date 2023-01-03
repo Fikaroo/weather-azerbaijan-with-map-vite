@@ -1,5 +1,5 @@
 import { ActionTypes } from "./action-types";
 
-export const setColor = (color: string): ColorAction => {
-  return { type: ActionTypes.SET_COLOR, payload: color };
+export const setColor = (colors: string[] | undefined): ColorAction => {
+  return { type: ActionTypes.SET_COLOR, payload: colors };
 };
